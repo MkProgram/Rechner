@@ -36,6 +36,7 @@ public class cFrame extends JFrame {
 	public static String sOperator = "";
 	public static boolean calculated = false;
 	public static Calculation calc;
+	public static History his = new History();
 	
 	/**
 	 * Launch the application.

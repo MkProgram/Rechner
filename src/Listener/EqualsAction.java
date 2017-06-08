@@ -5,8 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.regex.Pattern;
 
 import javax.swing.AbstractAction;
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
 
 import gui.cFrame;
 import Calc.Calculation;
@@ -32,7 +30,6 @@ public class EqualsAction extends AbstractAction implements ActionListener{
 		if(!cFrame.sOperator.equals("") )
 		{
 			String txt_out = cFrame.getText();
-			
 			char cOperator = cFrame.sOperator.charAt(0);
 			int value1 = 0;
 			int value2 = 0;
@@ -44,13 +41,12 @@ public class EqualsAction extends AbstractAction implements ActionListener{
 			}
 			catch (Exception ex)
 			{}
+			cFrame.his.pushHistory(value1, value2, cOperator);
 			cFrame.calc = new Calculation(value1, value2, cOperator);
-			if(cFrame.calc.result != "0")
-			{
-				cFrame.setText(cFrame.calc.result);
-				cFrame.calculated = true;
-				cFrame.sOperator = "";
-			}
+			cFrame.setText(cFrame.calc.result);
+			cFrame.calculated = true;
+			cFrame.sOperator = "";
+			
 		}
 	}
 	@Override

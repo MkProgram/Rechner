@@ -65,6 +65,25 @@ public class Calculation
 		
 	}
 	
+	//get- Method
+	public char getOperator()
+	{
+		return this.operator;
+	}
+	public int getValue1()
+	{
+		return this.val1;
+	}
+	public int getValue2()
+	{
+		return this.val2;
+	}
+	public String getResult()
+	{
+		return this.result;
+	}
+	
+	// Calculation Methods 
 	//add
 	private int add(int val1, int val2)
 	{
